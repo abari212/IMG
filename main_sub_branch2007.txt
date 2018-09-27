@@ -1,0 +1,12 @@
+function [main_array,main_branch,numberpixel_sub_branch,sub_length]=main_subroot2007(s);
+rgb=imread(s);
+img=rgb(:,:,1);
+img=imresize(img,0.5);
+j=imadjust(img,stretchlim(img),[]);
+l=isodata(j);
+bw=im2bw(j,l);
+b=bwareaopen(bw,200);
+figure,imshow(b);
+bw1=bwmorph(b,'thin',inf);
+bw3=bw1;
+[main_array,main_branch,numberpixel_sub_branch,sub_length]=analys_root_real_length_nosave1(bw1,bw3,rgb);
