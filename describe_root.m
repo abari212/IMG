@@ -1,4 +1,4 @@
-function [image_all,descreption_array]=describe_root(s);
+function [image_all,description_array]=describe_root(s);
 
 rgb=imread(s);
 img=rgb(:,:,1);
@@ -27,4 +27,4 @@ main=logical(b-big);
 main=bwareaopen(main,200);
 figure,imshow(main)
 ll=1;
-[descreption_array,ll,image_all]=analys_try(main,ll,s);
+[description_array,ll,image_all]=analys_try(main,ll,s);
