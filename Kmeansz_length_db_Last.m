@@ -31,26 +31,28 @@ numberpixel=ones(7,1);
 sizeblock=ones(7,1);
 dimblock=ones(7,2);
 for i=1:7
-c=0;
-d=0;
+     c=0;
+     d=0;
 sizeblock(i,1)=ceil(m/(2^i))*ceil(n/(2^i));
 dimblock(i,1)=ceil(m/(2^i));
 dimblock(i,2)=ceil(n/(2^i));
 c=blkproc(bw,[ceil(m/(2^i)),ceil(n/(2^i))],@sum);
 d=blkproc(c,[1,ceil(n/(2^i))],@sum);
+
 l=0;
 m1=0;
 n1=0;
 [m1,n1]=size(d);
 for k=1:m1
-for j=1:n1
-if d(k,j)~=0
-l=l+1;
-end
-end
+     for j=1:n1
+          if d(k,j)~=0
+          l=l+1;
+          end
+     end
 end
 numberpixel(i,1)=l;
 end
+
 x=[ones(size(sizeblock)) log10(sqrt(sizeblock))];
 b=regress(log10(numberpixel),x);
 BIr(1,1)=b(1,1);
