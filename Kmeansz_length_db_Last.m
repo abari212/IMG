@@ -1,3 +1,4 @@
+# This matlab script helps in image clustering based on K-means approach
 figure(1);
 I= imread('RA0101a.bmp');
 imshow(I), title('RA0101a');
