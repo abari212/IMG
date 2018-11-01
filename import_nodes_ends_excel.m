@@ -1,3 +1,4 @@
+# This script is a function to extract data from an image as excel data
 function [number_nodes,number_ends,i]=import_nodes_ends_excel(s,i);
 rgb=imread(s);
 main=removemainnodes(s);   
