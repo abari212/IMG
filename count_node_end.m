@@ -1,3 +1,4 @@
+# This script is a function to extract some of the features in a image, in particular the nodes in a structure 
 function [number_nodes,number_ends]=count_node_end(main);
 nodes=zeros(size(main));
 branch_t=bwmorph(main,'thin',inf);
