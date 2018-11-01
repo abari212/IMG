@@ -1,3 +1,4 @@
+# This script is a function to extract some of the features in a image 
 function main=removemainnodes(s);
 
 rgb=imread(s);
